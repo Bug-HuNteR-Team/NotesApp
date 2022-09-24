@@ -53,3 +53,6 @@ function changeStyle(propertyName) {
       break;
   }
 }
+function togglemenu(){
+  document.getElementById('sidebar').classList.toggle('active');
+}
