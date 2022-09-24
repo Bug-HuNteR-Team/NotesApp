@@ -1,3 +1,7 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -25,6 +29,9 @@ body {
   width: 100%;
   border-bottom: 1px #141414 dotted;
 }
+::placeholder {
+  color: white;
+}
 
 .options {
   height: 7%;
@@ -32,14 +39,11 @@ body {
   padding: 5px;
 }
 
-::placeholder {
-  color: #fff;
-}
 .txtHeader {
   font-size: 25px;
   height: 100%;
   background-color: transparent;
-  color: rgb(12, 6, 6);
+  color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: none;
   text-align: center;
@@ -47,17 +51,10 @@ body {
   display: block;
 }
 
-.txtHeader:focus,
-.txtHeader:hover {
-  border: none;
-  background-color: #fff;
-  color: #246ded;
-}
-
 .txtContent {
   height: 100%;
   width: 100%;
-  color: #0c0808;
+  color: white;
   background-color: rgb(8, 8, 8);
   word-wrap: break-word;
   font-family: Arial, Helvetica, sans-serif;
@@ -67,13 +64,7 @@ body {
   outline: none;
 }
 
-.txtContent:focus,
-.txtContent:hover {
-  border: none !important;
-  background-color: #f7f7f7;
-}
-
-.btn {
+.btn1 {
   padding: 5px;
   margin: 2px;
   background-color: #246ded;
@@ -81,11 +72,4 @@ body {
   font-size: 18px;
   border-radius: 5px;
   border: none;
-}
-
-.btn:focus,
-.btn:hover {
-  background-color: #fff;
-  color: #246ded;
-  border: 1px #246ded solid;
 }

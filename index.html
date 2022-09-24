@@ -1,37 +1,35 @@
 <html>
+
 <head>
-<link rel='stylesheet' href='style.css' />
+    <link rel='stylesheet' href='style.css' />
 </head>
+
 <body>
+    <div class="main">
+        <div class="main-container">
+            <div class="header">
+                <form>
+                    <input type="text" class="txtHeader" id="txtHeader" placeholder="Enter title here" />
+            </div>
+            <div class="content">
+                <textarea class="txtContent" id="txtContent"></textarea>
+                </form>
+            </div>
+            <button id="submitBtn">Save</button>
 
-<div class="main">
-<div class="main-container">
+            <div class="options">
+                <center>
+                    <button onclick="changeStyle('b')" class="btn1"><b>b</b></button>
+                    <button onclick="changeStyle('i')" class="btn1"><i>i</i></button>
+                    <button onclick="changeStyle('u')" class="btn1">u</button>
+                    <button onclick="changeStyle('n')" class="btn1">n</button>
+                </center>
+            </div>
 
-<div class="header">
-    <center>
-<input type="text" class="txtHeader" id="txtHeader" placeholder="Enter title here"/>
-&nbsp;
-</center>
-</div>
-
-<div class="content">
-    <center>
-<textarea class="txtContent" id="txtContent"></textarea>
-</center>
-</div>
-
-<div class="options">
-<center>
-<button onclick="changeStyle('b')" class="btn1"><b>b</b></button>
-<button onclick="changeStyle('i')" class="btn1"><i>i</i></button>
-<button onclick="changeStyle('u')" class="btn1">u</button>
-<button onclick="changeStyle('n')" class="btn1">n</button>
-</center>
-</div>
-
-</div>
-</div>
-</div>
+        </div>
+    </div>
+    </div>
 </body>
-<script src='script.js' ></script>
+<script src='./main.js'></script>
+
 </html>
