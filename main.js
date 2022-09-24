@@ -3,7 +3,7 @@ let notes = [];
 let submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", () => {
   let title = document.getElementById("txtHeader").value;
-  let content = document.getElementById("txtContent").value;
+  let content = document.getElementById("txtContent").innerText;
   notes.push({
     title: title,
     content: content,
