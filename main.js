@@ -4,8 +4,6 @@ let submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", () => {
   let title = document.getElementById("txtHeader").value;
   let content = document.getElementById("txtContent").value;
-  // Onclick of button store the note in array
-  //   console.log(title, " ", content);
   notes.push({
     title: title,
     content: content,
@@ -14,26 +12,44 @@ submitBtn.addEventListener("click", () => {
 });
 
 function changeStyle(propertyName) {
+  // get the textarea
+  var txtarea = document.getElementById("txtContent");
+  // get the selected text
+  let selected = document.getSelection();
+  // buttons logic
   switch (propertyName) {
     case "b":
-      if (window.document.selection.style.fontWeight === "bold")
-        window.document.selection.style.fontWeight = "normal";
-      else window.document.selection.style.fontWeight = "bold";
+      let boldtext = '<span style="font-weight:bold;">' + selected + "</span>";
+      txtarea.innerHTML = txtarea.innerHTML.replace(
+        document.getSelection(),
+        boldtext
+      );
       break;
     case "i":
-      if (window.document.selection.style.fontStyle === "italic")
-        window.document.selection.style.fontStyle = "normal";
-      else window.document.selection.style.fontStyle = "italic";
+      let italicText =
+        '<span style="font-style: italic;">' + selected + "</span>";
+      txtarea.innerHTML = txtarea.innerHTML.replace(
+        document.getSelection(),
+        italicText
+      );
       break;
     case "n":
-      window.document.selection.style.fontWeight = "normal";
-      window.document.selection.style.fontStyle = "normal";
-      window.document.selection.style.textDecoration = "none";
+      let normalText =
+        '<span style="font-style: normal; font-weight:normal; text-decoration:none;">' +
+        selected +
+        "</span>";
+      txtarea.innerHTML = txtarea.innerHTML.replace(
+        document.getSelection(),
+        normalText
+      );
       break;
     case "u":
-      if (window.document.selection.style.textDecoration === "underline")
-        window.document.selection.style.textDecoration = "none";
-      else window.document.selection.style.textDecoration = "underline";
+      let underlineText =
+        '<span style="text-decoration: underline;">' + selected + "</span>";
+      txtarea.innerHTML = txtarea.innerHTML.replace(
+        document.getSelection(),
+        underlineText
+      );
       break;
   }
 }
