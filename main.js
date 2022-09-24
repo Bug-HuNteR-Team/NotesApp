@@ -9,6 +9,21 @@ submitBtn.addEventListener("click", () => {
     content: content,
   });
   console.log(notes);
+  // rendering notes
+  const rows = notes.map((note) => {
+    return `
+            <div class="card">
+              <div class="card-content">
+                  <div class="name">${note.title}</div>
+                  <div class="description">${note.content}</div>
+              </div>
+            </div>
+          `;
+  });
+  const html = `<div>${rows.join()}</div>`;
+  console.log(html);
+  const notesDiv = document.getElementById("notesDiv");
+  notesDiv.innerHTML = html;
 });
 
 function changeStyle(propertyName) {
@@ -53,6 +68,6 @@ function changeStyle(propertyName) {
       break;
   }
 }
-function togglemenu(){
-  document.getElementById('sidebar').classList.toggle('active');
+function togglemenu() {
+  document.getElementById("sidebar").classList.toggle("active");
 }
