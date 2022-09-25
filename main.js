@@ -27,7 +27,8 @@ submitBtn.addEventListener("click", () => {
     content: content,
     date: `${month} ${day}, ${year}`,
   });
-  console.log(notes);
+  document.getElementById("txtHeader").value = "";
+  document.getElementById("txtContent").innerText = "";
   showNotes();
 });
 
