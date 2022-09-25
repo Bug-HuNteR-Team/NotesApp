@@ -1,13 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Mali&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 /* Side-Bar */
+
+/*
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+*/
 
 #sidebar {
   position: fixed;
   width: 30%;
   height: 100%;
   left: -30%;
-  background-color: skyblue;
+  background-color: #a17643;
+  z-index: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.sidebar-header {
+  font-size: 20px;
+  font-weight: 900;
 }
 
 #sidebar li {
@@ -22,14 +47,17 @@
   position: absolute;
   left: 105%;
   top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
 }
 
 .toggle-btn span {
   display: block;
-  background-color: rgb(203, 41, 127);
-  width: 40px;
-  height: 6px;
-  margin: 2px;
+  background-color: rgb(251, 251, 251);
+  width: 30px;
+  height: 2px;
 }
 
 #sidebar.active {
@@ -42,25 +70,39 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: "Mali", cursive;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .main {
-  background-color: rgb(17, 17, 17);
-  height: 100%;
+  background-color: #264143;
   padding: 69px;
+  height: 100%;
 }
 
 .main-container {
-  border: 1px solid #246ded;
+  border: 2px solid #de5499;
   width: 84%;
   height: 84%;
-  margin-top: -3.5rem;
-  margin-left: 5rem;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #234235;
 }
 
 .header {
-  background-color: #246ded;
+  background-color: #de5499;
   height: 7%;
   width: 100%;
   padding: 5px 0px;
@@ -68,8 +110,8 @@
 
 .content {
   background-color: #fff;
-  height: 80%;
-  width: 84%;
+  height: calc(100% - 160px);
+  width: 100%;
   border-bottom: 1px #141414 dotted;
 }
 
@@ -78,9 +120,12 @@
 }
 
 .options {
-  height: 25%;
-  width: 15%;
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
 }
 
 .txtHeader {
@@ -98,53 +143,55 @@
   height: 100%;
   width: 100%;
   color: white;
-  background-color: rgb(8, 8, 8);
   word-wrap: break-word;
   padding: 10px;
   font-size: 18px;
   border: none;
   outline: none;
+  background-color: #1a2d2e;
 }
 
-.btn1 {
-  width: 25px;
-  height: 30px;
-  padding: 10px;
-  margin: 2px;
-  background-color: #246ded;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 5px;
-  box-shadow: inset 0 0 0 0 skyblue;
-  transition: ease-out 0.3s;
-  border: none;
+.styleBtn {
+  color: var(--color-primary);
+  height: 40px;
+  width: 40px;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  transition: var(--transition);
 }
 
-.btn1:hover {
-  box-shadow: inset 300px 0 0 0 skyblue;
+.styleBtn:hover {
+  background: #fc76b9;
+  color: black;
+  border-color: transparent;
 }
 
 /* save btn */
 
-.submitBtn {
-  margin-top: -3rem;
-  margin-left: 46rem;
-  width: 200px;
-  height: 50px;
-  border: none;
+#submitBtn {
+  border: 2px solid white;
+  padding: 4px 36px;
   color: white;
-  background-color: rgb(20, 163, 235);
-  border-radius: 4px;
-  box-shadow: inset 0 0 0 0 #06f93b;
-  transition: ease-out 0.3s;
-  font-size: 2rem;
+  background-color: #de5499;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #cf218c;
+  transition: ease-out 0.8s;
+  font-size: 1.8rem;
   outline: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.submitBtn:hover {
-  box-shadow: inset 300px 0 0 0 #06f93b;
+#submitBtn:hover {
+  box-shadow: inset 300px 0 0 0 #cf218c;
 }
+
 /* Notes Div */
+
 .note {
   display: flex;
   flex-direction: column;
@@ -190,6 +237,7 @@
   font-size: 16px;
   margin-top: 5px;
 }
+
 .bottom-content {
   display: flex;
   justify-content: space-between;
