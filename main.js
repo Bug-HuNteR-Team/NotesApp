@@ -1,30 +1,69 @@
 // This will be array which will store all our notes
 let notes = [];
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 let submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", () => {
   let title = document.getElementById("txtHeader").value;
   let content = document.getElementById("txtContent").innerText;
+  let currentDate = new Date(),
+    month = months[currentDate.getMonth()],
+    day = currentDate.getDate(),
+    year = currentDate.getFullYear();
   notes.push({
     title: title,
     content: content,
+    date: `${month} ${day}, ${year}`,
   });
   console.log(notes);
-  // rendering notes
-  const rows = notes.map((note) => {
-    return `
-            <div class="card">
-              <div class="card-content">
-                  <div class="name">${note.title}</div>
-                  <div class="description">${note.content}</div>
-              </div>
-            </div>
-          `;
-  });
-  const html = `<div>${rows.join()}</div>`;
-  console.log(html);
-  const notesDiv = document.getElementById("notesDiv");
-  notesDiv.innerHTML = html;
+  showNotes();
 });
+
+// rendering notes
+function showNotes() {
+  const notesDiv = document.getElementById("notesDiv");
+  notesDiv.innerHTML = notes
+    .map((note, index) => {
+      return `
+    <div class="note">
+        <div class="details">
+          <p>${note.title}</p>
+          <span>${note.content}</span>
+        </div>
+      <div class="bottom-content">
+          <p>${note.date}</p>
+          <div class="bottom-icons">
+            <span onclick="updateNote(${index}, '${note.title}', '${note.content}')"><i class="uil uil-pen"></i></span>
+            <span onclick="deleteNote(${index})"><i class="uil uil-trash"></i></span>
+            <span><i class="uil uil-copy"></i></span>
+          </div>
+      </div>
+    </div>
+          `;
+    })
+    .join("");
+}
+
+function showMenu(elem) {
+  elem.parentElement.classList.add("show");
+  document.addEventListener("click", (e) => {
+    if (e.target.tagName != "I" || e.target != elem) {
+      elem.parentElement.classList.remove("show");
+    }
+  });
+}
 
 function changeStyle(propertyName) {
   // get the textarea
@@ -71,3 +110,28 @@ function changeStyle(propertyName) {
 function togglemenu() {
   document.getElementById("sidebar").classList.toggle("active");
 }
+
+// Update note
+const updateNote = (index, title, content) => {
+  document.getElementById("txtHeader").value = title;
+  document.getElementById("txtContent").innerText = content;
+  document.getElementById("updateBtn").style.display = "inline-block";
+  document.getElementById("submitBtn").style.display = "none";
+  togglemenu();
+  document.getElementById("updateBtn").addEventListener("click", () => {
+    notes[index].title = document.getElementById("txtHeader").value;
+    notes[index].content = document.getElementById("txtContent").innerText;
+    document.getElementById("txtHeader").value = "";
+    document.getElementById("txtContent").innerText = "";
+    document.getElementById("updateBtn").style.display = "none";
+    document.getElementById("submitBtn").style.display = "inline-block";
+    showNotes();
+  });
+};
+// Delete note
+const deleteNote = (index) => {
+  let confirmDel = window.confirm("Are you sure you want to delete this note?");
+  if (!confirmDel) return;
+  notes.splice(index, 1);
+  showNotes();
+};

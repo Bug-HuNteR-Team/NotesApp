@@ -3,40 +3,36 @@
 <head>
     <title>Doreamon Notes app</title>
     <link rel='stylesheet' href='style.css' />
-    <script src='./main.js'>
-      /* function fn1()
-        {
-           var str = document.getElementById("txtHeader").value;
-           alert("VAlue: "+str);
-        } */
-    </script> 
-   
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
 </head>
 
 <body>
-    <div id="sidebar" onclick="togglemenu()"> 
-        <div class ="toggle-btn">
+    <div id="sidebar" >
+        <div class="toggle-btn" onclick="togglemenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <ul>
-            <li>Your Notes</li>
-        </ul>
-      </div>
+        <p>Your Notes</p>
+        <div id="notesDiv">
+        </div>
+    </div>
     <div class="main">
         <div class="main-container">
             <div class="header">
-                <form>
-                    <input type="text" class="txtHeader" id="txtHeader" placeholder="Enter title here" />
+
+                <input type="text" class="txtHeader" id="txtHeader" placeholder="Enter title here" />
             </div>
             <div class="content">
                 <!-- <textarea class="txtContent" id="txtContent"></textarea> -->
                 <div contenteditable="true" id="txtContent" class="txtContent"></div>
-                </form>
             </div>
-            <button onClick="fn1()" class="submitBtn">Save</button>
-
+            <button id="submitBtn">Save</button>
+            <button id="updateBtn" style="display: none;">Update</button>
             <div class="options">
                 <center>
                     <button onclick="changeStyle('b')" class="btn1"><b>B</b></button>
@@ -48,11 +44,11 @@
 
         </div>
     </div>
-    <div id="notesDiv">
+    <!-- <div id="notesDiv" class="notesDiv">
 
-    </div>
+    </div> -->
     </div>
 </body>
 
-
+<script src="./main.js"></script>
 </html>
