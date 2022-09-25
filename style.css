@@ -1,104 +1,148 @@
 @import url("https://fonts.googleapis.com/css2?family=Mali&display=swap");
+
 /* Side-Bar */
+
 #sidebar {
-  position: fixed;
-  width: 30%;
-  height: 100%;
-  left: -30%;
-  background-color: skyblue;
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    left: -30%;
+    background-color: skyblue;
 }
+
 #sidebar li {
-  color: white;
-  font-size: 30px;
-  padding: 30px;
-  border-bottom: 1px solid gray;
-  text-align: center;
+    color: white;
+    font-size: 30px;
+    padding: 30px;
+    border-bottom: 1px solid gray;
+    text-align: center;
 }
+
 .toggle-btn {
-  position: absolute;
-  left: 105%;
-  top: 15px;
+    position: absolute;
+    left: 105%;
+    top: 15px;
 }
+
 .toggle-btn span {
-  display: block;
-  background-color: yellowgreen;
-  width: 30px;
-  height: 5px;
-  margin: 2px;
+    display: block;
+    background-color: rgb(203, 41, 127);
+    width: 40px;
+    height: 6px;
+    margin: 2px;
 }
+
 #sidebar.active {
-  left: 0;
+    left: 0;
+    transition: 0.3s;
 }
+
+
 /* Side-Bar */
+
 * {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Mali", cursive;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Mali", cursive;
 }
 
 .main {
-  background-color: rgb(17, 17, 17);
-  height: 100%;
-  padding: 20px;
+    background-color: rgb(17, 17, 17);
+    height: 100%;
+    padding: 69px;
 }
 
 .main-container {
-  border: 1px solid #246ded;
-  width: 100%;
-  height: 100%;
+    border: 1px solid #246ded;
+    width: 84%;
+    height: 84%;
+    margin-top: -3.5rem;
+    margin-left: 5rem;
 }
+
 .header {
-  background-color: #246ded;
-  height: 7%;
-  width: 100%;
-  padding: 5px 0px;
+    background-color: #246ded;
+    height: 7%;
+    width: 100%;
+    padding: 5px 0px;
 }
 
 .content {
-  background-color: #fff;
-  height: 84%;
-  width: 100%;
-  border-bottom: 1px #141414 dotted;
+    background-color: #fff;
+    height: 80%;
+    width: 84%;
+    border-bottom: 1px #141414 dotted;
 }
+
 ::placeholder {
-  color: white;
+    color: white;
 }
 
 .options {
-  height: 7%;
-  width: 100%;
-  padding: 5px;
+    height: 25%;
+    width: 15%;
+    padding: 5px;
 }
 
 .txtHeader {
-  font-size: 25px;
-  height: 100%;
-  background-color: transparent;
-  color: white;
-  border: none;
-  text-align: center;
-  margin: auto;
-  display: block;
+    font-size: 25px;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-align: center;
+    margin: auto;
+    display: block;
 }
 
 .txtContent {
-  height: 100%;
-  width: 100%;
-  color: white;
-  background-color: rgb(8, 8, 8);
-  word-wrap: break-word;
-  padding: 10px;
-  font-size: 18px;
-  border: none;
-  outline: none;
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: rgb(8, 8, 8);
+    word-wrap: break-word;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
 }
 
 .btn1 {
-  padding: 5px;
-  margin: 2px;
-  background-color: #246ded;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 5px;
-  border: none;
+    width: 25px;
+    height: 30px;
+    padding: 10px;
+    margin: 2px;
+    background-color: #246ded;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 0 skyblue;
+    transition: ease-out 0.3s;
+    border: none;
+}
+
+.btn1:hover {
+    box-shadow: inset 300px 0 0 0 skyblue;
+}
+
+
+/* save btn */
+
+.submitBtn {
+    margin-top: -3rem;
+    margin-left: 46rem;
+    width: 200px;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: rgb(20, 163, 235);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 #06f93b;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+}
+
+.submitBtn:hover {
+    box-shadow: inset 300px 0 0 0 #06f93b;
 }
