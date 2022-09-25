@@ -48,7 +48,7 @@ function showNotes() {
           <div class="bottom-icons">
             <span onclick="updateNote(${index}, '${note.title}', '${note.content}')"><i class="uil uil-pen"></i></span>
             <span onclick="deleteNote(${index})"><i class="uil uil-trash"></i></span>
-            <span><i class="uil uil-copy"></i></span>
+            <span onclick="copykarle('${note.content}')"><i class="uil uil-copy"></i></span>
           </div>
       </div>
     </div>
@@ -135,4 +135,9 @@ const deleteNote = (index) => {
   if (!confirmDel) return;
   notes.splice(index, 1);
   showNotes();
+};
+
+// Copy to clipboard
+const copykarle = (content) => {
+  navigator.clipboard.writeText(content);
 };
