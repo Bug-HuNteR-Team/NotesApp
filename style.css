@@ -25,11 +25,11 @@
   width: 30%;
   height: 100%;
   left: -30%;
-  background-color: #c7ffd8;
+  background-color: #2f3257;
   z-index: 1;
   padding: 20px;
   box-sizing: border-box;
-  color: #161d6f;
+  color: #eeeeee;
   /* overflow-y:auto; */
 }
 
@@ -84,7 +84,18 @@ body {
 }
 
 .main {
-  background-color: #10143c;
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   padding: 69px;
   height: 100%;
 }
@@ -100,18 +111,18 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #c7ffd8;
+  background-color: #1b1f3a;
 }
 
 .header {
-  background-color: #161d6f;
+  background-color: #212545;
   height: 7%;
   width: 100%;
   padding: 5px 0px;
 }
 
 .content {
-  background-color: #fff;
+  background-color: #f1eee9;
   height: calc(100% - 160px);
   width: 100%;
   border-bottom: 1px #141414 dotted;
@@ -151,7 +162,7 @@ input:focus::placeholder {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: #1a2d2e;
+  background-color: #1b1f3a;
 }
 
 .styleBtn {
@@ -178,15 +189,18 @@ input:focus::placeholder {
 /* save btn */
 
 #submitBtn {
-  border: 2px solid white;
-  padding: 4px 36px;
-  color: white;
-  background-color: #161d6f;
+  padding: 4px 26px;
+  color: #d8d8d8;
   border-radius: 10px;
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.2s;
   font-size: 1.5rem;
   outline: none;
   cursor: pointer;
+  backdrop-filter: blur(15px) saturate(161%);
+  -webkit-backdrop-filter: blur(15px) saturate(161%);
+  background-color: rgba(41, 45, 83, 0.56);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 #submitBtn:hover {
@@ -212,16 +226,16 @@ input:focus::placeholder {
 }
 
 .notesDiv::-webkit-scrollbar {
-  height: 7px;
-  width: 7px;
+  height: 5px;
+  width: 5px;
 }
 .notesDiv::-webkit-scrollbar-track {
-  background: #c7ffd8;
+  background: #2f3257;
   border-radius: 25px;
 }
 
 .notesDiv::-webkit-scrollbar-thumb {
-  background-color: #59ce8f;
+  background-color: #6970c0;
   border-radius: 100vw;
   cursor: pointer;
 }
@@ -247,11 +261,11 @@ input:focus::placeholder {
 }
 
 .bottom-content p {
-  font-size: 15px;
+  font-size: 13px;
 }
 
-.note .bottom-content {
-  border-top: 1px solid black;
+.bottom-content {
+  border-top: 1px solid #afb4ff;
 }
 
 .bottom-icons {
@@ -266,11 +280,13 @@ input:focus::placeholder {
 .btn2,
 .btn3,
 .btn4 {
-  background-color: #161d6f;
-  border-radius: 5px;
+  backdrop-filter: blur(15px) saturate(161%);
+  -webkit-backdrop-filter: blur(15px) saturate(161%);
+  background-color: rgba(41, 45, 83, 0.56);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 15px;
-  border: 2px solid white;
-  color: white;
+  color: #d8d8d8;
   cursor: pointer;
 }
 .btn1:hover,
@@ -283,20 +299,35 @@ input:focus::placeholder {
   font-size: 20px;
 }
 #updateBtn {
-  background-color: #161d6f;
-  border-radius: 5px;
   margin: auto;
   margin-left: 10px;
   margin-top: -25px;
-
+  cursor: pointer;
   padding: 10px 10px;
   border: 2px solid white;
   color: white;
+  backdrop-filter: blur(15px) saturate(161%);
+  -webkit-backdrop-filter: blur(15px) saturate(161%);
+  background-color: rgba(41, 45, 83, 0.56);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 #updateBtn:hover {
   box-shadow: inset 300px 0 0 0 #5160ff;
 }
+.settings {
+  color: #7076b9;
+}
 
 .settings:hover {
-  color: #5160ff;
+  color: #9197d2;
+}
+
+.details span {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #efefef;
+}
+.details p {
+  font-size: 20px;
 }
