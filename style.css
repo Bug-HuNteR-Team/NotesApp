@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap");
+* {
+  font-family: "Noto Sans Mono", monospace;
+}
 /* Side-Bar */
 
 /*
@@ -23,11 +25,12 @@
   width: 30%;
   height: 100%;
   left: -30%;
-  background-color: #a17643;
+  background-color: #c7ffd8;
   z-index: 1;
   padding: 20px;
   box-sizing: border-box;
-  color: white;
+  color: #161d6f;
+  /* overflow-y:auto; */
 }
 
 .sidebar-header {
@@ -36,7 +39,7 @@
 }
 
 #sidebar li {
-  color: white;
+  color: #161d6f;
   font-size: 30px;
   padding: 30px;
   border-bottom: 1px solid gray;
@@ -55,9 +58,9 @@
 
 .toggle-btn span {
   display: block;
-  background-color: rgb(251, 251, 251);
+  background-color: #979ff4;
   width: 30px;
-  height: 2px;
+  height: 5px;
 }
 
 #sidebar.active {
@@ -70,7 +73,6 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
@@ -82,13 +84,13 @@ body {
 }
 
 .main {
-  background-color: #264143;
+  background-color: #10143c;
   padding: 69px;
   height: 100%;
 }
 
 .main-container {
-  border: 2px solid #de5499;
+  border: none;
   width: 84%;
   height: 84%;
   position: relative;
@@ -98,11 +100,11 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #234235;
+  background-color: #c7ffd8;
 }
 
 .header {
-  background-color: #de5499;
+  background-color: #161d6f;
   height: 7%;
   width: 100%;
   padding: 5px 0px;
@@ -123,9 +125,6 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
 }
 
 .txtHeader {
@@ -137,6 +136,10 @@ body {
   text-align: center;
   margin: auto;
   display: block;
+  outline: none;
+}
+input:focus::placeholder {
+  color: transparent;
 }
 
 .txtContent {
@@ -162,32 +165,32 @@ body {
 }
 
 .styleBtn:hover {
-  background: #fc76b9;
+  background: #161d6f;
   color: black;
   border-color: transparent;
 }
-
+.bottom-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 35px;
+}
 /* save btn */
 
 #submitBtn {
   border: 2px solid white;
   padding: 4px 36px;
   color: white;
-  background-color: #de5499;
+  background-color: #161d6f;
   border-radius: 10px;
-  box-shadow: inset 0 0 0 0 #cf218c;
-  transition: ease-out 0.8s;
-  font-size: 1.8rem;
+  transition: ease-in-out 0.3s;
+  font-size: 1.5rem;
   outline: none;
   cursor: pointer;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 #submitBtn:hover {
-  box-shadow: inset 300px 0 0 0 #cf218c;
+  background-color: #5160ff;
 }
 
 /* Notes Div */
@@ -197,33 +200,30 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border-radius: 15px;
+  margin: 10px 5px;
 }
 
-.note .details {
-  max-height: 165px;
-  overflow-y: auto;
+.notesDiv {
+  height: 90vh;
+  overflow-y: scroll;
 }
 
-.note .details::-webkit-scrollbar,
-.popup textarea::-webkit-scrollbar {
-  width: 0;
+.notesDiv::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
 }
-
-.note .details:hover::-webkit-scrollbar,
-.popup textarea:hover::-webkit-scrollbar {
-  width: 5px;
-}
-
-.note .details:hover::-webkit-scrollbar-track,
-.popup textarea:hover::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.notesDiv::-webkit-scrollbar-track {
+  background: #c7ffd8;
   border-radius: 25px;
 }
 
-.note .details:hover::-webkit-scrollbar-thumb,
-.popup textarea:hover::-webkit-scrollbar-thumb {
-  background: #e6e6e6;
-  border-radius: 25px;
+.notesDiv::-webkit-scrollbar-thumb {
+  background-color: #59ce8f;
+  border-radius: 100vw;
+  cursor: pointer;
 }
 
 .note p {
@@ -261,4 +261,42 @@ body {
   align-items: center;
   font-size: 10px;
   cursor: pointer;
+}
+.btn1,
+.btn2,
+.btn3,
+.btn4 {
+  background-color: #161d6f;
+  border-radius: 5px;
+  padding: 15px;
+  border: 2px solid white;
+  color: white;
+  cursor: pointer;
+}
+.btn1:hover,
+.btn2:hover,
+.btn3:hover,
+.btn4:hover {
+  box-shadow: inset 300px 0 0 0 #5160ff;
+}
+.fas {
+  font-size: 20px;
+}
+#updateBtn {
+  background-color: #161d6f;
+  border-radius: 5px;
+  margin: auto;
+  margin-left: 10px;
+  margin-top: -25px;
+
+  padding: 10px 10px;
+  border: 2px solid white;
+  color: white;
+}
+#updateBtn:hover {
+  box-shadow: inset 300px 0 0 0 #5160ff;
+}
+
+.settings:hover {
+  color: #5160ff;
 }

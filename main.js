@@ -46,9 +46,9 @@ function showNotes() {
       <div class="bottom-content">
           <p>${note.date}</p>
           <div class="bottom-icons">
-            <span onclick="updateNote(${index}, '${note.title}', '${note.content}')"><i class="uil uil-pen"></i></span>
-            <span onclick="deleteNote(${index})"><i class="uil uil-trash"></i></span>
-            <span onclick="copykarle('${note.content}')"><i class="uil uil-copy"></i></span>
+            <span onclick="updateNote(${index}, '${note.title}', '${note.content}')"><i class="uil uil-pen settings"></i></span>
+            <span onclick="deleteNote(${index})"><i class="uil uil-trash settings"></i></span>
+            <span onclick="copykarle('${note.content}')"><i class="uil uil-copy settings"></i></span>
           </div>
       </div>
     </div>

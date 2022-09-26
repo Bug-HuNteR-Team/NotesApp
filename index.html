@@ -2,12 +2,12 @@
 
 <head>
     <title>Doreamon Notes app</title>
-    <link rel='stylesheet' href='style.css' />
+    <link rel='stylesheet' href='./style.css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,8 +18,8 @@
             <span></span>
             <span></span>
         </div>
-        <p>Your Notes</p>
-        <div id="notesDiv">
+        <p style="text-align: center;">Your Notes</p>
+        <div id="notesDiv" class="notesDiv">
         </div>
     </div>
     <div class="main">
@@ -32,24 +32,20 @@
                 <!-- <textarea class="txtContent" id="txtContent"></textarea> -->
                 <div contenteditable="true" id="txtContent" class="txtContent"></div>
             </div>
-            <button id="submitBtn">Save</button>
             <button id="updateBtn" style="display: none;">Update</button>
-            <div class="options">
-                <center>
-                    <button onclick="changeStyle('b')" class="btn1"></button>
-                    <button onclick="changeStyle('i')" class="btn2"></button>
-                    <button onclick="changeStyle('u')" class="btn3"></button>
-                    <button onclick="changeStyle('n')" class="btn4">n</button>
-                </center>
+            <div class="bottom-options">
+                <div class="options">
+                        <button onclick="changeStyle('b')" class="btn1"><i class="fas fa-bold"></i></button>
+                        <button onclick="changeStyle('i')" class="btn2"><i class="fas fa-italic"></i></button>
+                        <button onclick="changeStyle('u')" class="btn3"><i class="fas fa-underline"></i></button>
+                        <button onclick="changeStyle('n')" class="btn4"><i class="fas fa-n">n</i></button>
+                </div>
+                <button id="submitBtn">Save</button>
             </div>
-
         </div>
     </div>
-    <!-- <div id="notesDiv" class="notesDiv">
-
-    </div> -->
     </div>
 </body>
-
+<!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 <script src="./main.js"></script>
 </html>
